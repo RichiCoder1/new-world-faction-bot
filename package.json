@@ -1,0 +1,21 @@
+{
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node -r esbuild-register -r dotenv/config src/index.ts"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.10.0",
+    "@discordjs/rest": "^0.2.0-canary.0",
+    "@sapphire/framework": "^2.3.0-pr-293.cfc7538.0",
+    "@sapphire/plugin-logger": "^2.1.1",
+    "discord-api-types": "^0.26.0",
+    "discord.js": "^13.4.0",
+    "dotenv": "^10.0.0",
+    "env-var": "^7.1.1",
+    "mongoose": "^6.1.4"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.9",
+    "esbuild-register": "^3.3.1"
+  }
+}
