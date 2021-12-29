@@ -1,0 +1,31 @@
+
+name: new-world-faction-bot
+region: nyc
+workers:
+- name: new-world-faction-bot
+  github:
+    branch: main
+    repo: RichiCoder1/new-world-faction-bot
+  run_command: npm start
+  envs:
+  - key: DISCORD_TOKEN
+    scope: RUN_TIME
+    type: SECRET
+    value: EV[1:IXm44LFME90/HqlBYckty+3QPVpXPCI+:SmT6GIfz4rXu4fBaQumO9hsuIv3MEaDlcQan1Xy7BuK3IkUmjnOkouELMZD+kR/LekAp4cJ1sWsQm8I6m3wxGc39T3K4brdN1Shh]
+  - key: DATABASE_URL
+    scope: RUN_TIME
+    value: mongodb+srv://nwfb-dev.cxnc4.mongodb.net/dev?retryWrites=true&w=majority
+  - key: DATABASE_USER
+    scope: RUN_TIME
+    value: app
+  - key: DATABASE_PASSWORD
+    scope: RUN_TIME
+    type: SECRET
+    value: EV[1:fVgg63PZQRQrxeppQknQDDSw4+VL3zbS:6GOiIx1heasFGe+Qwb0n22f9cjxxtfGnRCD2tBEAlYY=]
+  - key: TS_NODE_DEV
+    scope: RUN_TIME
+    value: "1"
+  environment_slug: node-js
+alerts:
+- rule: DEPLOYMENT_FAILED
+- rule: DOMAIN_FAILED

@@ -6,6 +6,7 @@ import {
   Command,
 } from "@sapphire/framework";
 import { GuildSettings } from '../models/guildSettings';
+import { TEST_GUILDS } from '../constants';
 
 export class VerifyCommand extends Command {
   public override registerApplicationCommands(
@@ -14,8 +15,8 @@ export class VerifyCommand extends Command {
     registry.registerContextMenuCommand({
       type: "USER",
       name: "FC: Unverify",
-      defaultPermission: true,
-    });
+      defaultPermission: false,
+    }, { guildIds: TEST_GUILDS });
   }
 
   public async contextMenuRun(interaction: ContextMenuInteraction) {

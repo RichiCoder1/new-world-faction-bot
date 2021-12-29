@@ -1,7 +1,9 @@
-import { SapphireClient } from "@sapphire/framework";
+import { container, SapphireClient } from "@sapphire/framework";
 import "@sapphire/plugin-logger/register";
 import env from "env-var";
 import { mongoose } from "./db";
+import { readdir, lstat } from "node:fs/promises";
+import { join } from "node:path/posix";
 
 const token = env.get("DISCORD_TOKEN").asString();
 const databaseUrl = env.get('DATABASE_URL').required().asUrlString();
@@ -21,6 +23,11 @@ const client = new SapphireClient({
 });
 
 (async () => {
+    const dirs: string[] = [];
+    for (const dir of dirs) {
+        container.stores.registerPath(join(__dirname, dir));
+    }
+
     await mongoose.connect(databaseUrl, {
         user: databaseUser,
         pass: databasePassword,

@@ -2,6 +2,7 @@ import { VERIFY_USER_EVENT } from "./../listeners/verifyUser";
 import { userMention } from "@discordjs/builders";
 import type { ContextMenuInteraction } from "discord.js";
 import { ApplicationCommandRegistry, Command } from "@sapphire/framework";
+import { TEST_GUILDS } from "../constants";
 
 export class VerifyCommand extends Command {
   public constructor(context: Command.Context) {
@@ -17,8 +18,8 @@ export class VerifyCommand extends Command {
     registry.registerContextMenuCommand({
       type: "USER",
       name: "FC: Verify",
-      defaultPermission: true,
-    });
+      defaultPermission: false,
+    }, { guildIds: TEST_GUILDS });
   }
 
   public async contextMenuRun(interaction: ContextMenuInteraction) {

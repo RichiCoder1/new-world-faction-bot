@@ -1,3 +1,4 @@
+import { TEST_GUILDS } from './../constants';
 import { Verification } from './../models/verification';
 import { ContextMenuInteraction, MessageActionRow, MessageButton } from "discord.js";
 import {
@@ -13,8 +14,8 @@ export class VerifyCommand extends Command {
     registry.registerContextMenuCommand({
       type: "USER",
       name: "FC: Check Verification",
-      defaultPermission: true,
-    });
+      defaultPermission: false
+    }, { guildIds: TEST_GUILDS });
   }
 
   public async contextMenuRun(interaction: ContextMenuInteraction) {

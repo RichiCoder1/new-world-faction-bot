@@ -8,3 +8,4 @@ TODO:
   * [ ] Associate Verification with Companies
   * [ ] Unverify Company
 * [ ] Break Setup into Multiple Commands
+* [ ] Fix DO 
