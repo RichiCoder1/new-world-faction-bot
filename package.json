@@ -14,7 +14,7 @@
     "env-var": "^7.1.1",
     "esbuild": "^0.14.9",
     "esbuild-register": "^3.3.1",
-    "mongoose": "^6.1.4"
+    "mongoose": "^6.4.6"
   },
   "engines": {
     "node": "16.x",
